@@ -17,6 +17,12 @@ public class TabelaBasquete {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Janela_Tabela jTabela;
+     
+        jTabela = new Janela_Tabela();       
+        jTabela.setVisible(true);
+        
+        
     }
     
 }
