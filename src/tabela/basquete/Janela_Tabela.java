@@ -218,7 +218,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
 
     private void jButtonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaActionPerformed
         // Adiciona pontuação na tabela;
-        tabelaPontos
+       
         
     }//GEN-LAST:event_jButtonConfirmaActionPerformed
 
@@ -285,11 +285,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
     
     //precisa de função para verificar dados anteriores
     
-    public ArrayList<Pontuacao> AdicionaPontuacao (ArrayList<Pontuacao> tabela, int pts){
-        
-        
-        
-    };
+    //public ArrayList<Pontuacao> AdicionaPontuacao (ArrayList<Pontuacao> tabela, int pts){    };
             
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
