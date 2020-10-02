@@ -24,7 +24,7 @@ public class Classes {
         private int recordeMaximo;
         private int pontuacaoAtual;
     
-        public void IniciaPontuacao (int jogo, int minT, int maxT, int recMin, int recMax){
+        public void InserePontuacao (int jogo, int minT, int maxT, int recMin, int recMax){
         
             numeroJogos = jogo;
             minimoTemporada = minT;

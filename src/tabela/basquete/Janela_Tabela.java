@@ -235,29 +235,30 @@ public class Janela_Tabela extends javax.swing.JFrame {
             //Insere a pontução da partida, e o número do jogo;
             resultadoPartida.AdicionaPontuacao(ponto);
             
-            if (numeroJogos>0 ){
-                resultadoPartida.IniciaPontuacao(1, ponto, ponto, 0, 0);
+            if (numeroJogos==0 ){
+                resultadoPartida.InserePontuacao(1, ponto, ponto, 0, 0);
                       
             }else{
                 int minTemp = (tabelaPontos.get(numeroJogos-1)).retornaMinimoTemporada();
                 int maxTemp = (tabelaPontos.get(numeroJogos-1)).retornaMaximoTemporada();
-          
+                int recordeMin = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMinimo();
+                int recordeMax = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMaximo();
+                
                 if(ponto<minTemp ){                  
                     minTemp = ponto; 
-                }    
-                
-                if(ponto>maxTemp ){                  
+                    recordeMin++;
+                }else if(ponto>maxTemp ){                  
                     maxTemp = ponto;
+                    recordeMax++;
                 }
-                             
                 
+                numeroJogos++;
+                resultadoPartida.InserePontuacao(numeroJogos, minTemp, maxTemp, recordeMin, recordeMax);
                 
                             
             } 
             tabelaPontos.add(resultadoPartida);
        }
-        
-        
     }//GEN-LAST:event_jButtonConfirmaActionPerformed
 
     public static void main(String args[]) {
