@@ -34,6 +34,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
     private void initComponents() {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
+        jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,6 +48,11 @@ public class Janela_Tabela extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButtonConfirma = new javax.swing.JButton();
         jCampoTextoPlacar = new javax.swing.JTextField();
+        jLabelJogoAtual = new javax.swing.JLabel();
+        jLabelMaiorPontuacao = new javax.swing.JLabel();
+        jLabelMenorPontuacao = new javax.swing.JLabel();
+        jLabelRecordesMaior = new javax.swing.JLabel();
+        jLabelRecordesMenor = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -63,6 +69,8 @@ public class Janela_Tabela extends javax.swing.JFrame {
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jLabel9.setText("jLabel9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -100,7 +108,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
@@ -136,7 +144,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jCampoTextoPlacar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonConfirma)
                 .addContainerGap())
         );
@@ -156,6 +164,16 @@ public class Janela_Tabela extends javax.swing.JFrame {
                         .addContainerGap(29, Short.MAX_VALUE))))
         );
 
+        jLabelJogoAtual.setText("-");
+
+        jLabelMaiorPontuacao.setText("-");
+
+        jLabelMenorPontuacao.setText("-");
+
+        jLabelRecordesMaior.setText("-");
+
+        jLabelRecordesMenor.setText("-");
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -172,23 +190,34 @@ public class Janela_Tabela extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelJogoAtual))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap(30, Short.MAX_VALUE))))
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelMaiorPontuacao))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelMenorPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(95, 95, 95)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelRecordesMenor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelRecordesMaior)))))
+                .addContainerGap(46, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
+                .addGap(184, 184, 184)
                 .addComponent(jLabel5)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -198,20 +227,31 @@ public class Janela_Tabela extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel7))
-                .addGap(22, 22, 22)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabelJogoAtual))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelMaiorPontuacao)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabelRecordesMaior))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabelRecordesMenor))
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabelMenorPontuacao))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -235,15 +275,19 @@ public class Janela_Tabela extends javax.swing.JFrame {
             //Insere a pontução da partida, e o número do jogo;
             resultadoPartida.AdicionaPontuacao(ponto);
             
+         
+            
             if (numeroJogos==0 ){
+                numeroJogos=1;
                 resultadoPartida.InserePontuacao(1, ponto, ponto, 0, 0);
                       
             }else{
+                
                 int minTemp = (tabelaPontos.get(numeroJogos-1)).retornaMinimoTemporada();
                 int maxTemp = (tabelaPontos.get(numeroJogos-1)).retornaMaximoTemporada();
                 int recordeMin = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMinimo();
-                int recordeMax = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMaximo();
-                
+                int recordeMax = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMaximo();   
+
                 if(ponto<minTemp ){                  
                     minTemp = ponto; 
                     recordeMin++;
@@ -254,10 +298,18 @@ public class Janela_Tabela extends javax.swing.JFrame {
                 
                 numeroJogos++;
                 resultadoPartida.InserePontuacao(numeroJogos, minTemp, maxTemp, recordeMin, recordeMax);
-                
-                            
+
             } 
+            
             tabelaPontos.add(resultadoPartida);
+            jLabelJogoAtual.setText(numeroJogos+"");
+            jLabelMaiorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaMaximoTemporada()+"");
+            jLabelMenorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaMinimoTemporada()+"");
+            jLabelRecordesMaior.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMaximo()+"");
+            jLabelRecordesMenor.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMinimo()+"");
+            
+            this.repaint();
+
        }
     }//GEN-LAST:event_jButtonConfirmaActionPerformed
 
@@ -316,6 +368,12 @@ public class Janela_Tabela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelJogoAtual;
+    private javax.swing.JLabel jLabelMaiorPontuacao;
+    private javax.swing.JLabel jLabelMenorPontuacao;
+    private javax.swing.JLabel jLabelRecordesMaior;
+    private javax.swing.JLabel jLabelRecordesMenor;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
