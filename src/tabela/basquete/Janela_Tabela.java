@@ -7,10 +7,13 @@
 package tabela.basquete;
 
 import java.util.ArrayList;
+import static tabela.basquete.Classes.*;
+import tabela.basquete.Classes.Pontuacao;
+
 
 /**
  *
- * @author drawf
+ * @author Alexandre
  */
 public class Janela_Tabela extends javax.swing.JFrame {
 
@@ -20,6 +23,8 @@ public class Janela_Tabela extends javax.swing.JFrame {
      * Creates new form Janela_Tabela
      */
     public Janela_Tabela() {
+        
+        ArrayList<Pontuacao> tabelaPontos = new ArrayList<>();
         initComponents();
         
     }
@@ -41,7 +46,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButtonConfirma = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jCampoTextoPlacar = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -129,8 +134,8 @@ public class Janela_Tabela extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCampoTextoPlacar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jButtonConfirma)
                 .addContainerGap())
@@ -147,7 +152,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCampoTextoPlacar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(29, Short.MAX_VALUE))))
         );
 
@@ -164,24 +169,24 @@ public class Janela_Tabela extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(51, Short.MAX_VALUE))))
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(30, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(136, 136, 136)
                 .addComponent(jLabel5)
@@ -218,7 +223,40 @@ public class Janela_Tabela extends javax.swing.JFrame {
 
     private void jButtonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaActionPerformed
         // Adiciona pontuação na tabela;
+        int ponto = TextoParaNumero(jCampoTextoPlacar.getText());
        
+        if(ponto<0){
+            jCampoTextoPlacar.setText("");
+            //mensagem de erro;            
+       }else{
+            
+            int numeroJogos = tabelaPontos.size();
+            Pontuacao resultadoPartida = new Pontuacao();
+            //Insere a pontução da partida, e o número do jogo;
+            resultadoPartida.AdicionaPontuacao(ponto);
+            
+            if (numeroJogos>0 ){
+                resultadoPartida.IniciaPontuacao(1, ponto, ponto, 0, 0);
+                      
+            }else{
+                int minTemp = (tabelaPontos.get(numeroJogos-1)).retornaMinimoTemporada();
+                int maxTemp = (tabelaPontos.get(numeroJogos-1)).retornaMaximoTemporada();
+          
+                if(ponto<minTemp ){                  
+                    minTemp = ponto; 
+                }    
+                
+                if(ponto>maxTemp ){                  
+                    maxTemp = ponto;
+                }
+                             
+                
+                
+                            
+            } 
+            tabelaPontos.add(resultadoPartida);
+       }
+        
         
     }//GEN-LAST:event_jButtonConfirmaActionPerformed
 
@@ -255,30 +293,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
     }
 
     
-    public class Pontuacao {
     
-    private int numeroJogos;
-    private int minimoTemporada;
-    private int maximotemporada;
-    private int recordesMinimos;
-    private int recordesMaximos;
-    private int pontuacaoAtual;
-    
-        public Pontuacao (int jogo, int minT, int maxT, int recMin, int recMax){
-        
-            numeroJogos = jogo;
-            minimoTemporada = minT;
-            maximotemporada = maxT;
-            recordesMinimos = recMin;
-            recordesMaximos = recMax;
-    
-        };
-        
-        public void AdicionaPontuacao (int pts){
-            pontuacaoAtual=pts;    
-        };
-    
-    }    
     
     //tabelaPontos contem os dados que vão alimentar a tabela
     ArrayList<Pontuacao> tabelaPontos = new ArrayList<Pontuacao>();
@@ -290,6 +305,7 @@ public class Janela_Tabela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonConfirma;
+    private javax.swing.JTextField jCampoTextoPlacar;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -304,7 +320,6 @@ public class Janela_Tabela extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
 
