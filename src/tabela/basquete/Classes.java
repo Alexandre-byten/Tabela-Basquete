@@ -18,19 +18,19 @@ public class Classes {
     public static class Pontuacao {
     
         private int numeroJogos;
-        private int minimoTemporada;
-        private int maximoTemporada;
         private int recordeMinimo;
         private int recordeMaximo;
+        private int QuebrasRecordeMinimo;
+        private int QuabrasRecordeMaximo;
         private int pontuacaoAtual;
     
         public void InserePontuacao (int jogo, int minT, int maxT, int recMin, int recMax){
         
             numeroJogos = jogo;
-            minimoTemporada = minT;
-            maximoTemporada = maxT;
-            recordeMinimo = recMin;
-            recordeMaximo = recMax;
+            recordeMinimo = minT;
+            recordeMaximo = maxT;
+            QuebrasRecordeMinimo = recMin;
+            QuabrasRecordeMaximo = recMax;
     
         };
         
@@ -39,12 +39,12 @@ public class Classes {
 
         };
         
-        public int retornaMinimoTemporada(){
-            return minimoTemporada;
+        public int retornaPontuacao(){
+            return pontuacaoAtual;
         }
 
-        public int retornaMaximoTemporada(){
-            return maximoTemporada;
+        public int retornaNumeroJogo(){
+            return numeroJogos;
         }
         
         public int retornaRecordeMinimo(){
@@ -53,6 +53,14 @@ public class Classes {
 
         public int retornaRecordeMaximo(){
             return recordeMaximo;
+        }
+        
+        public int retornaQuebrasRecordeMinimo(){
+            return QuebrasRecordeMinimo;
+        }
+
+        public int retornaQuebrasRecordeMaximo(){
+            return QuabrasRecordeMaximo;
         }
 
         

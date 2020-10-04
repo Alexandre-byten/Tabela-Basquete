@@ -9,16 +9,13 @@ package tabela.basquete;
 import java.util.ArrayList;
 import static tabela.basquete.Classes.*;
 import tabela.basquete.Classes.Pontuacao;
-
+import Frames.Aviso;
 
 /**
  *
  * @author Alexandre
  */
 public class Janela_Tabela extends javax.swing.JFrame {
-
-    
-    
     /**
      * Creates new form Janela_Tabela
      */
@@ -35,27 +32,25 @@ public class Janela_Tabela extends javax.swing.JFrame {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabelTabelaPontos = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jButtonConfirma = new javax.swing.JButton();
         jCampoTextoPlacar = new javax.swing.JTextField();
-        jLabelJogoAtual = new javax.swing.JLabel();
-        jLabelMaiorPontuacao = new javax.swing.JLabel();
-        jLabelMenorPontuacao = new javax.swing.JLabel();
-        jLabelRecordesMaior = new javax.swing.JLabel();
-        jLabelRecordesMenor = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTJogoAtual = new javax.swing.JLabel();
+        jLabelTMaiorPontuacao = new javax.swing.JLabel();
+        jLabelTMenorPontuacao = new javax.swing.JLabel();
+        jLabelVJogoAtual = new javax.swing.JLabel();
+        jLabelVMaiorPontuacao = new javax.swing.JLabel();
+        jLabelTRecordeMaior = new javax.swing.JLabel();
+        jLabelVMenorPontuacao = new javax.swing.JLabel();
+        jLabelTReecordeMenor = new javax.swing.JLabel();
+        jLabelVRecordesMaior = new javax.swing.JLabel();
+        jLabelVRecordesMenor = new javax.swing.JLabel();
+        jButtonConfirma1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -75,58 +70,15 @@ public class Janela_Tabela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel2.setText("Jogo Atual:");
-
-        jLabel3.setText("Maior Pontuação da Temporada:");
-
-        jLabel4.setText("Menor Pontuação da Temporada:");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Tabela de Pontos");
-        jLabel5.setToolTipText("");
-
-        jLabel6.setText("Recordes quebrados de maior Pontuação:");
-
-        jLabel7.setText("Recordes quebrados de menor Pontuação:");
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel1.setText("Consultar histórico de jogos?");
-
-        jButton1.setText("Consulta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(73, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-        );
+        jLabelTabelaPontos.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelTabelaPontos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTabelaPontos.setText("Tabela de Pontos");
+        jLabelTabelaPontos.setToolTipText("");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel8.setText("Inserir novo Placar?");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Inserir novo Placar:");
 
         jButtonConfirma.setText("Confirma");
         jButtonConfirma.addActionListener(new java.awt.event.ActionListener() {
@@ -135,52 +87,136 @@ public class Janela_Tabela extends javax.swing.JFrame {
             }
         });
 
+        jCampoTextoPlacar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCampoTextoPlacar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonConfirma)
-                .addContainerGap())
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCampoTextoPlacar))
+                        .addGap(22, 22, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonConfirma)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonConfirma)
-                        .addContainerGap())
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCampoTextoPlacar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(29, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCampoTextoPlacar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonConfirma)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jLabelJogoAtual.setText("-");
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabelMaiorPontuacao.setText("-");
+        jLabelTJogoAtual.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelTJogoAtual.setText("Jogo Atual:");
 
-        jLabelMenorPontuacao.setText("-");
+        jLabelTMaiorPontuacao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelTMaiorPontuacao.setText("Maior Pontuação da Temporada:");
 
-        jLabelRecordesMaior.setText("-");
+        jLabelTMenorPontuacao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelTMenorPontuacao.setText("Menor Pontuação da Temporada:");
 
-        jLabelRecordesMenor.setText("-");
+        jLabelVJogoAtual.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelVJogoAtual.setText("-");
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jLabelVMaiorPontuacao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelVMaiorPontuacao.setText("-");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jLabelTRecordeMaior.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelTRecordeMaior.setText("Recordes quebrados de maior Pontuação:");
 
-        setJMenuBar(jMenuBar1);
+        jLabelVMenorPontuacao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelVMenorPontuacao.setText("-");
+
+        jLabelTReecordeMenor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelTReecordeMenor.setText("Recordes quebrados de menor Pontuação:");
+
+        jLabelVRecordesMaior.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelVRecordesMaior.setText("-");
+
+        jLabelVRecordesMenor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelVRecordesMenor.setText("-");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelTJogoAtual)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelVJogoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelTReecordeMenor)
+                            .addComponent(jLabelTRecordeMaior)
+                            .addComponent(jLabelTMenorPontuacao)
+                            .addComponent(jLabelTMaiorPontuacao))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelVMaiorPontuacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelVMenorPontuacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelVRecordesMaior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelVRecordesMenor, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTJogoAtual)
+                    .addComponent(jLabelVJogoAtual))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabelVMaiorPontuacao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelVMenorPontuacao)
+                            .addComponent(jLabelTMenorPontuacao)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabelTMaiorPontuacao)))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTRecordeMaior)
+                    .addComponent(jLabelVRecordesMaior))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTReecordeMenor)
+                    .addComponent(jLabelVRecordesMenor))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jButtonConfirma1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonConfirma1.setText("Consulta");
+        jButtonConfirma1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirma1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Consulta pontuação");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText(" detalhada da tamporada:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,77 +225,47 @@ public class Janela_Tabela extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelJogoAtual))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelMaiorPontuacao))
+                                .addGap(48, 48, 48)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelMenorPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(jButtonConfirma1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelRecordesMenor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelRecordesMaior)))))
-                .addContainerGap(46, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(184, 184, 184)
-                .addComponent(jLabel5)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel2)))))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelTabelaPontos)
+                .addGap(104, 104, 104))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addComponent(jLabelTabelaPontos)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabelJogoAtual))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelMaiorPontuacao)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabelRecordesMaior))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabelRecordesMenor))
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabelMenorPontuacao))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(jButtonConfirma1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaActionPerformed
         // Adiciona pontuação na tabela;
@@ -267,26 +273,29 @@ public class Janela_Tabela extends javax.swing.JFrame {
        
         if(ponto<0){
             jCampoTextoPlacar.setText("");
+            Aviso jErro = new Aviso();
+            jErro.AtualizaAviso("Apenas Números são permitidos!");
+            jErro.setVisible(true);
+            
+            
             //mensagem de erro;            
        }else{
-            
             int numeroJogos = tabelaPontos.size();
             Pontuacao resultadoPartida = new Pontuacao();
             //Insere a pontução da partida, e o número do jogo;
             resultadoPartida.AdicionaPontuacao(ponto);
             
-         
-            
             if (numeroJogos==0 ){
                 numeroJogos=1;
+                //Primeira pontuação
                 resultadoPartida.InserePontuacao(1, ponto, ponto, 0, 0);
                       
             }else{
                 
-                int minTemp = (tabelaPontos.get(numeroJogos-1)).retornaMinimoTemporada();
-                int maxTemp = (tabelaPontos.get(numeroJogos-1)).retornaMaximoTemporada();
-                int recordeMin = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMinimo();
-                int recordeMax = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMaximo();   
+                int minTemp = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMinimo();
+                int maxTemp = (tabelaPontos.get(numeroJogos-1)).retornaRecordeMaximo();
+                int recordeMin = (tabelaPontos.get(numeroJogos-1)).retornaQuebrasRecordeMinimo();
+                int recordeMax = (tabelaPontos.get(numeroJogos-1)).retornaQuebrasRecordeMaximo();   
 
                 if(ponto<minTemp ){                  
                     minTemp = ponto; 
@@ -302,16 +311,28 @@ public class Janela_Tabela extends javax.swing.JFrame {
             } 
             
             tabelaPontos.add(resultadoPartida);
-            jLabelJogoAtual.setText(numeroJogos+"");
-            jLabelMaiorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaMaximoTemporada()+"");
-            jLabelMenorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaMinimoTemporada()+"");
-            jLabelRecordesMaior.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMaximo()+"");
-            jLabelRecordesMenor.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMinimo()+"");
+            jLabelVJogoAtual.setText(numeroJogos+"");
+            jLabelVMaiorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMaximo()+"");
+            jLabelVMenorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMinimo()+"");
+            jLabelVRecordesMaior.setText(tabelaPontos.get(numeroJogos-1).retornaQuebrasRecordeMaximo()+"");
+            jLabelVRecordesMenor.setText(tabelaPontos.get(numeroJogos-1).retornaQuebrasRecordeMinimo()+"");
+            
+            jCampoTextoPlacar.setText("");
+            jCampoTextoPlacar.requestFocus();
             
             this.repaint();
 
        }
     }//GEN-LAST:event_jButtonConfirmaActionPerformed
+
+    private void jButtonConfirma1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirma1ActionPerformed
+        // TODO add your handling code here:
+        JanelaConsulta jConsulta;
+        jConsulta = new JanelaConsulta(tabelaPontos);       
+        jConsulta.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jButtonConfirma1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -345,9 +366,6 @@ public class Janela_Tabela extends javax.swing.JFrame {
         });
     }
 
-    
-    
-    
     //tabelaPontos contem os dados que vão alimentar a tabela
     ArrayList<Pontuacao> tabelaPontos = new ArrayList<Pontuacao>();
     
@@ -356,27 +374,25 @@ public class Janela_Tabela extends javax.swing.JFrame {
     //public ArrayList<Pontuacao> AdicionaPontuacao (ArrayList<Pontuacao> tabela, int pts){    };
             
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonConfirma;
+    private javax.swing.JButton jButtonConfirma1;
     private javax.swing.JTextField jCampoTextoPlacar;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelJogoAtual;
-    private javax.swing.JLabel jLabelMaiorPontuacao;
-    private javax.swing.JLabel jLabelMenorPontuacao;
-    private javax.swing.JLabel jLabelRecordesMaior;
-    private javax.swing.JLabel jLabelRecordesMenor;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabelTJogoAtual;
+    private javax.swing.JLabel jLabelTMaiorPontuacao;
+    private javax.swing.JLabel jLabelTMenorPontuacao;
+    private javax.swing.JLabel jLabelTRecordeMaior;
+    private javax.swing.JLabel jLabelTReecordeMenor;
+    private javax.swing.JLabel jLabelTabelaPontos;
+    private javax.swing.JLabel jLabelVJogoAtual;
+    private javax.swing.JLabel jLabelVMaiorPontuacao;
+    private javax.swing.JLabel jLabelVMenorPontuacao;
+    private javax.swing.JLabel jLabelVRecordesMaior;
+    private javax.swing.JLabel jLabelVRecordesMenor;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
