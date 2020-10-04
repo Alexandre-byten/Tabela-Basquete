@@ -67,8 +67,6 @@ public class Classes {
     }
     
     
-
-    
     public static int TextoParaNumero(String texto){
     //converte uma String em Inteiro        
         int numero = 0;   
@@ -77,7 +75,9 @@ public class Classes {
         for(int i=0; i<texto.length();i++){    
 
             if(!(texto.charAt(i)=='0'||texto.charAt(i)=='1'||texto.charAt(i)=='2'||texto.charAt(i)=='3'||texto.charAt(i)=='4'||texto.charAt(i)=='5'||texto.charAt(i)=='6'||texto.charAt(i)=='7'||texto.charAt(i)=='8'||texto.charAt(i)=='9')){
-                //Se o caracter não for numérico, retornar -1 para tratar o erro
+                //Se o caracter não estiver em um formato numérico valido,
+                //(Numero inteiro positivo)
+                //retornar -1 para tratar o erro
                 return -1;
             }
         }        

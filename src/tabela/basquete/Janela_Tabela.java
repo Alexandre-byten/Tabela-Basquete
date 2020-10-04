@@ -88,6 +88,11 @@ public class Janela_Tabela extends javax.swing.JFrame {
         });
 
         jCampoTextoPlacar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jCampoTextoPlacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCampoTextoPlacarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -269,16 +274,25 @@ public class Janela_Tabela extends javax.swing.JFrame {
 
     private void jButtonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmaActionPerformed
         // Adiciona pontuação na tabela;
+        
+        //A função TextoParaNumero transforma os dados digitados no campo de texto
+        //em um numero int. Caso a string digitada não seja válida, -1 é retornado
         int ponto = TextoParaNumero(jCampoTextoPlacar.getText());
        
         if(ponto<0){
             jCampoTextoPlacar.setText("");
+            //mensagem de erro; 
             Aviso jErro = new Aviso();
-            jErro.AtualizaAviso("Apenas Números são permitidos!");
+            jErro.AtualizaAviso("Apenas Números inteiros positivos são permitidos!");
             jErro.setVisible(true);
-            
-            
-            //mensagem de erro;            
+       
+       }else if (ponto > 100){
+            jCampoTextoPlacar.setText("");
+            //mensagem de erro; 
+            Aviso jErro = new Aviso();
+            jErro.AtualizaAviso2("Mais de 100 pontos não são aceitos na tabela.","Corrija a pontuação, ou caso o valor esteja correto, procure a NBA.");
+            jErro.setVisible(true);
+       
        }else{
             int numeroJogos = tabelaPontos.size();
             Pontuacao resultadoPartida = new Pontuacao();
@@ -316,7 +330,6 @@ public class Janela_Tabela extends javax.swing.JFrame {
             jLabelVMenorPontuacao.setText(tabelaPontos.get(numeroJogos-1).retornaRecordeMinimo()+"");
             jLabelVRecordesMaior.setText(tabelaPontos.get(numeroJogos-1).retornaQuebrasRecordeMaximo()+"");
             jLabelVRecordesMenor.setText(tabelaPontos.get(numeroJogos-1).retornaQuebrasRecordeMinimo()+"");
-            
             jCampoTextoPlacar.setText("");
             jCampoTextoPlacar.requestFocus();
             
@@ -333,6 +346,10 @@ public class Janela_Tabela extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButtonConfirma1ActionPerformed
+
+    private void jCampoTextoPlacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCampoTextoPlacarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCampoTextoPlacarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
