@@ -286,11 +286,11 @@ public class Janela_Tabela extends javax.swing.JFrame {
             jErro.AtualizaAviso("Apenas Números inteiros positivos são permitidos!");
             jErro.setVisible(true);
        
-       }else if (ponto > 100){
+       }else if (ponto > 1000){
             jCampoTextoPlacar.setText("");
             //mensagem de erro; 
             Aviso jErro = new Aviso();
-            jErro.AtualizaAviso2("Mais de 100 pontos não são aceitos na tabela.","Corrija a pontuação, ou caso o valor esteja correto, procure a NBA.");
+            jErro.AtualizaAviso2("Mais de 1000 pontos não são aceitos na tabela.","O recorde Mundial é 100 pontos, se você fez mais que 1000, procure a NBA ou a NASA.");
             jErro.setVisible(true);
        
        }else{
